@@ -45,7 +45,7 @@ int main(void) {
 	display_color(CYAN, BLACK);
   lcd_print("Testing WiFi\n");
 
-  connectToAP("Fuck me its wifi", "leakyCeiling2");
+  connectToAP("wifi", "pass");
   _delay_ms(100);
   connectToServer("TCP", "192.168.0.37", "55555");
   _delay_ms(100);
