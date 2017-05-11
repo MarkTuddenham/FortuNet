@@ -3,7 +3,7 @@
 # Appears to work under Linux, OSX, and Cygwin/Windows.
 # Under OSX it should be named "Makefile".
 #
-# Requires GNU 'make' and 'find'. 
+# Requires GNU 'make' and 'find'.
 
 # Target Architecture
 BOARD := LaFortuna
@@ -12,13 +12,13 @@ F_CPU := 8000000UL
 
 # Tool Options
 CFLAGS    := -Os -mmcu=$(MCU) -DF_CPU=$(F_CPU)
-# CFLAGS    += -Wl,-u,vfprintf -lprintf_flt -lm  # floating point support 
+# CFLAGS    += -Wl,-u,vfprintf -lprintf_flt -lm  # floating point support
 CFLAGS    += -fno-strict-aliasing  # FATfs does not adhere to strict aliasing
-CFLAGS    += -Wno-main             # main() will never return 
+CFLAGS    += -Wno-main             # main() will never return
 CFLAGS    += -Wall -Wextra
 # CFLAGS    += -std=c99  -pedantic # lcd library is not c99 clean
-CFLAGS    += -Wstrict-overflow=5 -fstrict-overflow -Winline              
-CHKFLAGS  := 
+CFLAGS    += -Wstrict-overflow=5 -fstrict-overflow -Winline
+CHKFLAGS  :=
 # CHKFLAGS  += -fsyntax-only
 BUILD_DIR := _build
 
@@ -86,8 +86,8 @@ clean:
 	$(info Usage:)
 	$(info Source files can be grouped into subdirectories.)
 	$(info To build an executable and attempt to upload it,)
-	$(info use just "make". If the executable requires EEPROM) 
-	$(info initialization, use "make prom".) 
+	$(info use just "make". If the executable requires EEPROM)
+	$(info initialization, use "make prom".)
 	$(info )
 	$(info make mymain.hex --> to build a hex-file for mymain.c)
 	$(info make mymain.eep --> for an EEPROM  file for mymain.c)
@@ -105,9 +105,9 @@ clean:
 
 
 # The MIT License (MIT)
-# 
+#
 # Copyright (c) 2014-2015 Klaus-Peter Zauner
-# 
+#
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
 # (the "Software"), to deal in the Software without restriction,
@@ -115,10 +115,10 @@ clean:
 # publish, distribute, sublicense, and/or sell copies of the Software,
 # and to permit persons to whom the Software is furnished to do so,
 # subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be
 # included in all copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 # EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -129,4 +129,3 @@ clean:
 # SOFTWARE.
 #
 #=======================================================================
-

@@ -37,6 +37,24 @@ void connectToAP(char* ssid, char* pwd);
 */
 void sleepWiFi(int time);
 
+/*
+<type>: string parameter indicating the connection type: "TCP", "UDP"	or "SSL".
+<ip>: string parameter indicating the remote IP address.
+<port>: the remote port number
+*/
+void connectToServer(char* type, char* ip, char* port);
+void dissconect();
+
+/*
+<data> data to send over connection
+<length> size of data
+*/
+void sendString(char* data, int length);
+
+/*
+<length> size of data
+*/
+void prepareSend(int length);
 
 void init_uart();
 void resetWiFi();

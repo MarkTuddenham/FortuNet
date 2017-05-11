@@ -41,24 +41,39 @@ void rx(char str[], int nchars) {
   str[i] = '\0';
 }
 
-void connectToWiFi(){
-
-}
-
 void setAsAP(char* ssid, char* pwd, int chl, int ecn){
 	printf("AT+CWMODE=2\r\n");
-	_delay_ms(100);
-	printf("AT+CWSAP=\"%s\",\"%s\",%i,%i\r\n", ssid, pwd, chl, ecn);
+	_delay_ms(200);
+	printf("AT+CWSAP=\"%s\",\"%s\",%d,%d\r\n", ssid, pwd, chl, ecn);
 }
 
 void connectToAP(char* ssid, char* pwd){
 	printf("AT+CWMODE=1\r\n");
-	_delay_ms(100);
-	printf("AT+CWJAP=\"%s\",\"%s\"", ssid, pwd);
+	_delay_ms(200);
+	printf("AT+CWJAP=\"%s\",\"%s\"\r\n", ssid, pwd);
 
 }
 
+void connectToServer(char* type, char* ip, char* port){
+	printf("AT+CIPSTART=\"%s\",\"%s\",%s\r\n", type, ip, port);
+}
+void dissconect(){
+	printf("AT+CIPCLOSE\r\n");
+}
 
+void sendString(char* data, int length){
+	prepareSend(length);
+	_delay_ms(100);
+	printf("%s\r\n",data);
+}
+
+void prepareSend(int length){
+	printf("AT+CIPSEND=%d\r\n",length);
+}
+
+void connectionStatus(){
+	printf("AT+CIPSTATUS\r\n");
+}
 
 void sleepWiFi(int time){
 	printf("AT+GSLP=%i\r\n", time);
